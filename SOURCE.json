@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "baseline_repository": "https://github.com/kyuhank/fisheries-workflow-demo",
+  "baseline_commit": "b6dc067d5346d3809edf0ad66a0f6c7e7d07ce93",
+  "jobs": [
+    "submission",
+    "qc",
+    "database",
+    "extract",
+    "cpue_a",
+    "cpue_b",
+    "cpue_summary",
+    "cpue_report"
+  ],
+  "library": {
+    "path": "R/cpue.R",
+    "sha256": "e1f95567270dd04abc0ef8dbafa1a8757f37401e85fb326c5ff058361f2ddf54",
+    "baseline_path": "workflow/r/models.R",
+    "baseline_lines": "1-65"
+  }
+}

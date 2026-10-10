@@ -1,0 +1,36 @@
+# Compare CPUE results (`cpue_summary`)
+
+Collect the two fitted CPUE series for comparison without fitting another model.
+
+Analyst role: CPUE analyst. The entry point is [run.R](run.R), using shared [common.R](../../workflow/r/common.R).
+
+## Inputs and settings
+
+Previous jobs: [CPUE analysis A (`cpue_a`)](../cpue_a/README.md), [CPUE analysis B (`cpue_b`)](../cpue_b/README.md)
+
+Input files: The `series` in `runs/cpue_a/output.json` and `runs/cpue_b/output.json`.
+
+Saved settings: No job-specific settings (`{}`).
+
+## Run in the container
+
+Inside the declared container, from the repository root:
+
+```sh
+make inside-job JOB=cpue_summary
+```
+
+The coordinator refreshes required inputs and calls this job through
+`workflow/Makefile`. `OUTPUT=DIR` changes the default `runs` directory;
+`SETTINGS=FILE` supplies JSON settings. The run record identifies the image and
+software versions used.
+
+## Outputs and downstream jobs
+
+- `runs/cpue_summary/output.json`: the R calculation result.
+- `runs/cpue_summary/report.html`: a result page from the shared [renderer](../../workflow/reports.py).
+- `runs/cpue_summary/record.json`: inputs, settings, R source hashes, actual container identity and software used.
+
+Downstream jobs: [CPUE report (`cpue_report`)](../cpue_report/README.md)
+
+Saved example: [Report](https://kyuhank.github.io/fisheries-workflow-demo/example/cpue_summary/report.html) · [Output JSON](https://kyuhank.github.io/fisheries-workflow-demo/example/cpue_summary/output.json) · [Run record](https://kyuhank.github.io/fisheries-workflow-demo/example/cpue_summary/record.json).
