@@ -14,7 +14,7 @@
   ],
   "library": {
     "path": "R/cpue.R",
-    "sha256": "e1f95567270dd04abc0ef8dbafa1a8757f37401e85fb326c5ff058361f2ddf54",
+    "sha256": "ce2bd70395062618a641bb94047993da7d8c34055260ac14010f909dae701a1e",
     "baseline_path": "workflow/r/models.R",
     "baseline_lines": "1-65"
   }
