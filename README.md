@@ -11,11 +11,12 @@ source row. The prepared profile covers six strata in 2000–2022: the initial
 snapshot ends in 2021, and the update adds 2022.
 
 [R/cpue.R](R/cpue.R) contains the calculations. Analysis A fits a quasipoisson
-GLM with year and cell–quarter effects; B fits year effects only. Both use a log
+GLM with year and cell–quarter effects; B fits year and quarter effects. Both use a log
 link and `log(hooks / 1000)` as an effort offset. Predictions at 1000 hooks are
 averaged over the same strata with equal weights in every year, then divided by
 the first-year prediction. Outputs preserve nominal CPUE, standardised CPUE,
-the prediction grid, weights and model checks. Released zeros are retained when
+the prediction grid, weights and model checks. Quarter effects partly confound
+spatial differences on this support. Released zeros are retained when
 supplied. An effort filter fails if it removes an entire year or stratum.
 
 Run [CPUE A](jobs/cpue_a/run.R) and [CPUE B](jobs/cpue_b/run.R) through the
